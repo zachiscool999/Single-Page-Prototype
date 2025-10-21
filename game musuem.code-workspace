@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "."
+	},
+	{
+		"path": "../../flagfies"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "game musuem"
+  }
+}
