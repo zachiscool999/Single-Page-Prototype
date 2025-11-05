@@ -32,7 +32,8 @@ body {
   flex-direction: column;
 }
 
-.logo {
+.logo,
+.ball {
   height: 150px;
 }
 @font-face {
@@ -54,15 +55,21 @@ h1 {
 .pong,
 .space,
 .war,
-.kong {
-  font-size: 20px;
-  text-decoration: none;
+.kong,
+.contact {
+  font-family: "Press Start 2P";
+  font-size: 15px;
   color: black;
-  background-color: rgb(55, 144, 171);
-  border: 2px solid black;
+  background-color: #c2c2c2;
+  border: 4px solid #0fc3ff;
+  padding: 12px 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0 #8ded51;
+  transition: all 0.2s ease;
+  position: relative;
   border-radius: 100px;
-  padding: 10px 20px;
-  margin: 10px;
+  text-decoration: none;
 }
 nav {
   display: flex;
@@ -101,7 +108,7 @@ video {
   margin: 0;
   display: block;
 }
-
+.pongText,
 .intro-text {
   font-family: Arial, sans-serif;
   font-size: 30px;
@@ -125,4 +132,194 @@ footer {
   box-sizing: border-box;
   text-align: center;
   background-color: #fff58b;
+}
+.pongImage {
+  height: 350px;
+  border: 3px solid #e0d6c2;
+  border-radius: 6px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: #fdfaf5;
+  filter: sepia(0.1) contrast(1.05) brightness(0.98);
+  transition: box-shadow 0.3s ease;
+  float: left;
+}
+
+.pongImage:hover {
+  box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.25);
+}
+
+table,
+.pong-table {
+  clear: both;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin: 16px 0;
+  border-collapse: collapse;
+  flex: 1 1 100%;
+}
+
+table th,
+table td {
+  padding: 8px 10px;
+  border: 1px solid #000000;
+  text-align: left;
+}
+
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pongImage {
+    float: none;
+    display: block;
+    margin: 0 auto 12px;
+    width: clamp(200px, 60vw, 350px);
+    height: auto;
+  }
+
+  .pongText,
+  .intro-text {
+    margin: 8px 12px;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+}
+
+@media (min-width: 901px) {
+  table,
+  .pong-table {
+    clear: both;
+    width: 100%;
+  }
+}
+h3 {
+  color: #006646;
+}
+label {
+  float: left;
+  display: block;
+  text-align: right;
+  width: 125px;
+  padding-right: 2em;
+}
+input,
+textarea {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.contact-layout {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 20px;
+}
+
+.contact-left {
+  flex: 1 1 520px;
+  min-width: 280px;
+  max-width: 900px;
+}
+
+.contact-right {
+  flex: 0 0 360px;
+  min-width: 260px;
+  box-sizing: border-box;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.contact-form .form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-form label {
+  float: none;
+  display: block;
+  width: auto;
+  text-align: left;
+  padding-right: 0;
+  font-weight: 700;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+  width: 100%;
+  padding: 8px 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.submit-btn {
+  padding: 10px 18px;
+  background: #0fc3ff;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase;
+  align-self: flex-start;
+}
+
+.creator-card {
+  margin-top: 12px;
+  background: #fffef0;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #e6e0c9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+
+  --card-img-max-height: 420px;
+}
+
+.creator-image {
+  width: 100%;
+  height: auto;
+  max-height: var(--card-img-max-height);
+  display: block;
+  margin-bottom: 10px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.creator-bio,
+.creator-intro,
+.creator-more {
+  margin: 8px 0 0 0;
+  color: #333;
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .contact-layout {
+    flex-direction: column;
+    padding: 12px;
+  }
+  .contact-right {
+    flex: 1 1 auto;
+    max-width: none;
+  }
+  .submit-btn {
+    width: 100%;
+    align-self: stretch;
+  }
 }
